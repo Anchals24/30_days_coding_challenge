@@ -1,7 +1,7 @@
 #Brute-Force Method : Using 2 for loops
 
 class Solution:
-    def sortColors(self, nums: List[int]) -> None:
+    def findDuplicate(self, nums: List[int]) -> None:
         for i in range(len(nums)-1):
             for j in range(i+1,len(nums)):
 	            if nums[i]==nums[j]:
@@ -10,25 +10,24 @@ class Solution:
 #By sorting the array
 
 class Solution:
-    def sortColors(self, nums: List[int]) -> None:
+    def findDuplicate(self, nums: List[int]) -> int:
         nums.sort()
         for i in range(len(nums)-1):
-            for j in range(i+1,len(nums)):
-	            if nums[i]==nums[j]:
-		            return nums[i]
+            if nums[i] == nums[i+1]:
+                return nums[i]
 
 #Using Binary Search
 
 class Solution:
-    def sortColors(self, nums: List[int]) -> None:
+    def findDuplicate(self, nums: List[int]) -> None:
         nums.sort()
         l,r = 0,len(nums)-1
         while l<=r:
             mid = (l+r)//2
             if nums[mid]<mid+1:
-			    r = mid - 1
+		r = mid - 1
             else:
-			    l = mid + 1
+		l = mid + 1
         return l
 
 #By Linked List Cycle Method
