@@ -9,7 +9,6 @@ class Solution:
                     count += 1
             if count > len(nums)/2:
                 return nums[i]
-        return -1
 
 #By Dictionary
 
