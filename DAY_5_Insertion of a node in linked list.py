@@ -52,7 +52,7 @@ class LinkedList:
 		cnt = 1
 		temp = self.head
 		while (cnt != mid):
-			cnt+=1
+			cnt += 1
 			temp = temp.next
 		new_next = temp.next
 		temp.next = new_node
